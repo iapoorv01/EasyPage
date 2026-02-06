@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyPage Reader</title>
+  <link rel="stylesheet" href="../popup.css">
+  <style>
+    body { background: var(--bg-primary); color: var(--text-primary); margin: 0; font-family: 'Inter', Arial, sans-serif; }
+    .reader-container { max-width: 800px; margin: 32px auto; background: var(--bg-card); border-radius: 16px; box-shadow: var(--shadow-md); padding: 32px 40px; }
+    .reader-title { font-size: 2rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+    .reader-content { font-size: 1.1rem; line-height: 1.7; }
+    .reader-toolbar { display: flex; gap: 8px; margin-bottom: 18px; justify-content: flex-end; align-items: center; }
+    .reader-toolbar button { background: var(--bg-tertiary); border: 1.5px solid var(--border-color); border-radius: 50%; color: var(--text-primary); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 0; transition: border-color 0.18s, background 0.18s, color 0.18s; }
+    .reader-toolbar button:hover, .reader-toolbar button:focus { border-color: var(--accent-tts); background: var(--accent-tts); color: #fff; outline: none; }
+    .reader-toolbar svg { display: block; }
+  </style>
+  <style>
+    /* Settings drawer styles */
+    .settings-drawer {
+      position: fixed;
+      right: 28px;
+      top: 40px;
+      width: 360px;
+      height: calc(100vh - 80px);
+      background: var(--bg-primary);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+      z-index: 11000;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .settings-header { display:flex; align-items:center; justify-content:space-between; padding:18px 16px; border-bottom:1px solid var(--border-color); }
+    .settings-header h3 { margin:0; font-size:16px; color:var(--text-primary); }
+    .settings-header button { background:none; border:none; color:var(--text-muted); font-size:18px; cursor:pointer }
+    .settings-body { padding:12px 16px; overflow:auto; flex:1; display:flex; flex-direction:column; gap:12px }
+    .settings-row { display:flex; flex-direction:column; gap:6px }
+    .settings-row label { font-size:12px; color:var(--text-secondary) }
+    .settings-row select, .settings-row input[type="text"], .settings-row input[type="color"] { padding:8px 10px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-tertiary); color:var(--text-primary); }
+    .style-controls { display:flex; gap:8px }
+    .style-btn { width:40px; height:36px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-tertiary); color:var(--text-primary); cursor:pointer; font-weight:700 }
+    .style-btn.active { background:var(--accent-tts); color:#fff }
+    .skip-controls { display:flex; align-items:center; gap:12px }
+    .skip-controls button { width:32px; height:28px; border-radius:8px; background:var(--bg-tertiary); border:1px solid var(--border-color); color:var(--text-primary) }
+    .mode-btn { padding:8px 12px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-tertiary); color:var(--text-primary); cursor:pointer }
+    .mode-btn.active { background:linear-gradient(135deg,var(--accent-tts),#2b7be6); color:#fff }
+    .settings-footer { padding:12px 16px; border-top:1px solid var(--border-color); }
+    .export-modal { position: fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:12000 }
+    .export-content { background:var(--bg-primary); border:1px solid var(--glass-border); padding:20px; border-radius:12px; width:360px; box-shadow:var(--shadow-lg) }
+    .export-content h3 { margin-top:0; color:var(--text-primary) }
+    .export-content .settings-row { margin-bottom:10px }
+    .modal-close { position:absolute; right:12px; top:12px; background:none; border:none; font-size:18px; color:var(--text-muted); cursor:pointer }
+  </style>
+</head>
+<body>
+  <div class="reader-modal-overlay" id="readerModalOverlay">
+    <div class="reader-modal">
+      <div class="reader-modal-header">
+        <span class="reader-modal-title" id="readerTitle">Loading...</span>
+        <div class="reader-modal-actions">
+          <button id="themeToggle" title="Toggle Light/Dark" aria-label="Toggle Theme">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+          </button>
+          <button id="settingsBtn" title="Settings" aria-label="Settings">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c0 .66.39 1.26 1 1.51a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c0 .66.39 1.26 1 1.51a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09c-.66 0-1.26.39-1.51 1z"/></svg>
+          </button>
+          <button id="exportBtn" title="Export" aria-label="Export">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+          </button>
+          <button id="backBtn" title="Close" aria-label="Close">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="reader-modal-content" id="readerContent">Please wait...</div>
+    </div>
+    <!-- Settings Drawer -->
+    <aside id="settingsDrawer" class="settings-drawer" aria-hidden="true" style="display:none;">
+      <div class="settings-header">
+        <h3>Export Settings</h3>
+        <button id="closeSettingsDrawer" title="Close">✕</button>
+      </div>
+      <div class="settings-body" style="gap: 18px;">
+        <!-- Top Style Controls Row -->
+        <div class="settings-row" style="flex-direction: row; gap: 0; align-items: center; margin-bottom: 0;">
+          <div style="display: flex; gap: 12px; width: 100%; justify-content: space-between;">
+            <button id="ctlBold" class="style-btn" style="flex:1;">B</button>
+            <button id="ctlItalic" class="style-btn" style="flex:1;">I</button>
+            <button id="ctlHighlight" class="style-btn" style="flex:1;">✎</button>
+            <button id="ctlUnderline" class="style-btn" style="flex:1;">U</button>
+          </div>
+          <div class="underline-group" style="display: flex; gap: 4px; margin-left: 12px;">
+            <button id="ctlUnderlineDotted" class="style-btn" title="Dotted">...</button>
+            <button id="ctlUnderlineDashed" class="style-btn" title="Dashed">_ _ _</button>
+          </div>
+        </div>
+        <!-- Advanced Controls Two-Per-Row -->
+        <div class="settings-row" style="flex-direction: row; gap: 18px; margin-top: 18px;">
+          <div style="flex: 1;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Strength</label>
+            <input id="ctlStrength" type="range" min="0" max="200" value="100" style="width: 100%;">
+            <span id="ctlStrengthVal" style="font-size: 12px; float: right;">100%</span>
+          </div>
+          <div style="flex: 1;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Opacity</label>
+            <input id="ctlOpacity" type="range" min="10" max="100" value="100" style="width: 100%;">
+            <span id="ctlOpacityVal" style="font-size: 12px; float: right;">100%</span>
+          </div>
+        </div>
+        <div class="settings-row" style="flex-direction: row; gap: 18px; margin-top: 8px;">
+          <div style="flex: 1;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Weight</label>
+            <input id="ctlWeight" type="range" min="100" max="900" step="100" value="400" style="width: 100%;">
+            <span id="ctlWeightVal" style="font-size: 12px; float: right;">400</span>
+          </div>
+          <div style="flex: 1;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Line Height</label>
+            <input id="ctlLineHeight" type="range" min="1" max="2.5" step="0.05" value="1.7" style="width: 100%;">
+            <span id="ctlLineHeightVal" style="font-size: 12px; float: right;">1.5x</span>
+          </div>
+        </div>
+        <!-- Skip Row with Highlight Color Picker -->
+        <div class="settings-row" style="flex-direction: row; gap: 18px; margin-top: 8px; align-items: center;">
+          <div style="flex: 1; display: flex; align-items: center; gap: 8px;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Skip</label>
+            <div class="skip-controls">
+              <button id="ctlSkipMinus">-</button>
+              <span id="ctlSkipValue">0</span>
+              <button id="ctlSkipPlus">+</button>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-tertiary); border-radius: 10px; border: 1.5px solid var(--border-color); padding: 4px 10px 4px 8px; margin-left: 8px;">
+              <span style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">Highlight</span>
+              <input id="ctlHighlightColor" type="color" value="#fff176" title="Highlight Color" style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border-color);  box-shadow: none; padding: 0; cursor: pointer; appearance: none; -webkit-appearance: none;">
+            </div>
+          </div>
+        </div>
+        <!-- Mode/Color Controls Row (Mantine-style color pickers) -->
+        <div class="settings-row" style="flex-direction: row; gap: 18px; margin-top: 8px; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 12px; flex: 1 1 0%; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-tertiary); border-radius: 10px; border: 1.5px solid var(--border-color); padding: 4px 10px 4px 8px;">
+              <button id="ctlInk" class="mode-btn active" style="padding: 4px 8px; font-size: 12px; border: none; background: transparent; color: var(--text-primary); font-weight: 700;">INK</button>
+              <input id="ctlInkColor" type="color" value="#d32f2f" title="Ink Color" style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border-color); box-shadow: none; padding: 0; cursor: pointer; appearance: none; -webkit-appearance: none;">
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-tertiary); border-radius: 10px; border: 1.5px solid var(--border-color); padding: 4px 10px 4px 8px;">
+              <button id="ctlFade" class="mode-btn" style="padding: 4px 8px; font-size: 12px; border: none; background: transparent; color: var(--text-primary); font-weight: 700;">FADE</button>
+              <input id="ctlFadeColor" type="color" value="#f44336" title="Fade Color" style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border-color);  box-shadow: none; padding: 0; cursor: pointer; appearance: none; -webkit-appearance: none;">
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-tertiary); border-radius: 10px; border: 1.5px solid var(--border-color); padding: 4px 10px 4px 8px;">
+              <label style="font-size: 11px; color: var(--text-secondary); font-weight: 600; margin: 0; display: flex; align-items: center; gap: 4px;">
+                <input id="ctlBackground" type="checkbox" style="margin: 0 4px 0 0;">BG
+              </label>
+              <input id="ctlBackgroundColor" type="color" value="#fffbe6" title="Background Color" style="width: 22px; height: 22px; border-radius: 6px; border: 1.5px solid var(--border-color); box-shadow: none; padding: 0; cursor: pointer; appearance: none; -webkit-appearance: none;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Font Controls Row -->
+        <div class="settings-row" style="flex-direction: row; gap: 18px; align-items: flex-end; margin-top: 18px;">
+          <div style="flex: 1;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Font</label>
+            <select id="ctlFont" style="width: 100%;">
+              <option value="inherit">Default</option>
+              <option value="Arial, Helvetica, sans-serif">Arial</option>
+              <option value="serif">Serif</option>
+              <option value="sans-serif">Sans-serif</option>
+              <option value="monospace">Monospace</option>
+              <option value="opendyslexic">OpenDyslexic</option>
+              <option value="Fast Sans">Fast Sans</option>
+              <option value="Fast Serif">Fast Serif</option>
+              <option value="Fast Mono">Fast Mono</option>
+            </select>
+          </div>
+          <div style="flex: 1;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Font Size</label>
+            <select id="ctlFontSize" style="width: 100%;">
+              <option>14px</option>
+              <option>16px</option>
+              <option selected>18px</option>
+              <option>20px</option>
+              <option>22px</option>
+              <option>24px</option>
+              <option>28px</option>
+              <option>32px</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="settings-footer">
+        <button id="ctlDone" class="btn-primary">Done</button>
+      </div>
+    </aside>
+
+    <!-- Export Modal -->
+    <div id="exportModal" class="export-modal" style="display:none;">
+      <div class="export-content">
+        <button id="closeExport" class="modal-close">✕</button>
+        <h3>Export</h3>
+        <div class="settings-row">
+          <label>Format</label>
+          <select id="exportFormat">
+            <option value="html">HTML</option>
+            <option value="txt">TXT</option>
+            <option value="epub">EPUB</option>
+            <option value="docx">DOCX</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label>Filename</label>
+          <input id="exportFilename" type="text">
+        </div>
+        <div class="settings-row">
+          <button id="exportConfirm" class="btn-primary">Export</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="reader.js"></script>
+  <style>
+    .reader-modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--bg-primary);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+    }
+        body.light-theme {
+          --bg-primary: #ffffff;
+          --bg-secondary: #f8f9fa;
+          --bg-tertiary: #f1f3f5;
+          --bg-card: rgba(255, 255, 255, 0.9);
+          --border-color: rgba(0, 0, 0, 0.08);
+          --glass-border: rgba(0, 0, 0, 0.05);
+          --text-primary: #111827;
+          --text-secondary: #6b7280;
+          --text-muted: #9ca3af;
+          --accent-tts: #3b82f6;
+        }
+    .reader-modal {
+      background: var(--bg-card);
+      border-radius: 18px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+      max-width: 900px;
+      width: 90vw;
+      min-height: 70vh;
+      max-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .reader-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 36px 0 36px;
+      background: transparent;
+    }
+    .reader-modal-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0;
+      text-align: left;
+      flex: 1;
+    }
+    .reader-modal-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .reader-modal-content {
+      flex: 1;
+      padding: 32px 40px 40px 40px;
+      overflow-y: auto;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: transparent;
+    }
+  </style>
+    <script src="libs/mammoth.browser.min.js"></script>
+    <script src="libs/epub.min.js"></script>
+    <script src="libs/docx-epub-parse.js"></script>
+    <script src="libs/jszip.min.js"></script>
+    <script src="libs/html-docx.min.js"></script>
+   <!-- Ensure extension content scripts/styles are injected for full compatibility -->
+  <script src="content.js"></script>
+  <link rel="stylesheet" href="content.css">
+  <!-- Advanced settings/export modal will be injected here by JS -->
+</body>
+</html>

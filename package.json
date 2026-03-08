@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "cssnano-cli": "^1.0.5",
+    "terser": "^5.46.0"
+  }
+}

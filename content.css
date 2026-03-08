@@ -1,1 +1,1 @@
-.ir-frozen,.ir-spotlight{all:initial}
+.ir-dark-mode{background:var(--ir-bg-primary)!important;color:var(--ir-text-primary)!important}.ir-light-mode{background:var(--ir-bg-primary)!important;color:var(--ir-text-primary)!important}body.ir-dark-mode,body.ir-light-mode{background:var(--ir-bg-primary)!important;color:var(--ir-text-primary)!important}[class*=ir-]{background:var(--ir-bg-secondary);color:var(--ir-text-primary)}.ir-frozen,.ir-spotlight{all:initial}

@@ -1,9 +1,1 @@
-/* EasyPage Content Styles */
-
-/* These styles are injected dynamically but defined here for reference */
-
-/* Base reset for extension elements - excludes jargon elements to preserve font inheritance */
-.ir-spotlight,
-.ir-frozen {
-    all: initial;
-}
+.ir-frozen,.ir-spotlight{all:initial}

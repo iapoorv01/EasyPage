@@ -1,174 +1,119 @@
 <div align="center">
+  <img src="https://raw.githubusercontent.com/thinkapoorv/EasyView/main/icons/icon128.png" alt="EasyView Logo" width="120" style="border-radius: 20px; box-shadow: 0 0 40px rgba(0, 120, 255, 0.4);" />
 
-   <img src="https://raw.githubusercontent.com/iapoorv01/EasyView/main/icons/icon128.png" alt="EasyView Logo" width="328" />
+  # ✦ **EasyView**—*Any Website. Redesigned for You.* ✦
+  
+  <h3><i>See the web your way.</i></h3>
+  <br>
 
-  # **⚛️EasyView** - **Clarity for Every Brain**
+  [![Version: 1.1.1.4](https://img.shields.io/badge/Version-1.1.1.4-000000?style=for-the-badge&logo=vercel)](#)
+  [![Platform](https://img.shields.io/badge/Platform-15%2B%20Browsers-0055FF?style=for-the-badge)](https://easyview.in/)
+  [![Website](https://img.shields.io/badge/Website-EasyView.in-0055FF?style=for-the-badge)](https://easyview.in/)
 
-  **"Not every mind experiences the web the same way."**
-
-  [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg?style=for-the-badge)](https://github.com/iapoorv01/EasyView)
-  [![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](LICENSE)
-  [![Platform](https://img.shields.io/badge/platform-Chrome-orange.svg?style=for-the-badge)](https://chrome.google.com/webstore)
-  [![AI](https://img.shields.io/badge/Powered%20By-Amazon%20Nova-purple.svg?style=for-the-badge)](https://aws.amazon.com/ai/)
-
-
-<img width="1983" height="793" alt="easyview Marquee promo tile" src="https://github.com/user-attachments/assets/f0a6cf12-4b29-4e63-883a-470452de3b19" />
-
-
+  <br>
+  <img width="1983" height="793" alt="easyview Marquee promo tile" src="https://github.com/user-attachments/assets/f0a6cf12-4b29-4e63-883a-470452de3b19" />
 </div>
 
 ---
 
-## 🌊 The Problem: A Shouting Web
-**The web wasn't designed for every brain.**
-
-| Visual Stability | Distraction Removal | Sensory Balance|
-|---|---|---|
-|<img width="285" height="260" alt="Screen Recording 2026-05-03 231614" src="https://github.com/user-attachments/assets/16d91037-c531-476e-8f7b-b4dc42f418a3" />|<img width="282" height="250" alt="Screen Recording 2026-05-03 232154" src="https://github.com/user-attachments/assets/98d8ca32-da3a-4b72-8031-2147e2e4a5ce" />|<img width="280" height="252" alt="Screen Recording 2026-05-03 232414" src="https://github.com/user-attachments/assets/7bbfd14e-2530-4893-85b0-4f13e16465f7" />|
-
-Imagine trying to hear a gentle whisper while standing in the middle of a construction site. 
-
-For millions of people with **Dyslexia, ADHD, and Autism**, the modern web is that construction site. It's a chaotic landscape of flashing ads, overwhelming jargon, and rigid layouts. What should be a simple search for information becomes a mountain of cognitive friction. 
-
-**The impact?** Lost confidence, missed educational opportunities, and mental exhaustion. When the digital world isn't built for your brain, every click feels like a battle.
-
-> *"What should take seconds becomes mentally exhausting."*
-
----
-
-## ✨ The Solution: Web, Adapted
-**EasyView adapts the web to you.** We don't believe users should have to work harder to understand the internet. Instead, we've built an AI-powered bridge that translates the "shouting" web into a calm, structured, and personalized experience.
-
-<img width="1176" height="388" alt="Screen Recording 2026-05-03 234110" src="https://github.com/user-attachments/assets/e6655440-2ac2-421a-9aea-843c68db512c" />
-
 <div align="center">
-   
-### **The Transformation**
-| **Before EasyView** | **After EasyView** |
-| :--- | :--- |
-| Overwhelming text blocks | Structured, dyslexia-friendly layout |
-| Confusing legal/technical jargon | Plain English definitions |
-| Distracting animations & popups | A quiet, sensory-shielded space |
+  <h2>🌍 8 Billion People. 1 Internet.</h2>
+  <i>For years, developers had all the control. It's time we give it back to the users.</i>
 </div>
 
+<br>
+
+> In the famous movie *"Taare Zameen Par"*, the young protagonist, Ishaan Awasthi, battled with dyslexia—a neurological disorder that alters how reading and learning are processed. Similarly, millions navigate conditions like ADHD, ASD, or Irlen Syndrome, facing challenges so potent that letters may blur, bolden unevenly, or visually fade entirely for them. 
+
+<br>
+<div align="center">
+  <img height="360" src="https://github.com/user-attachments/assets/58570613-c38b-4e95-9fa9-fc1ecae753eb" style="border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" alt="EasyView Mobile UI Light" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img height="360" src="https://github.com/user-attachments/assets/8112a0f2-f569-4d79-a84f-7998ce50c96f" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);" alt="Taare Zameen Par" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img height="360" src="https://github.com/user-attachments/assets/8054d9b8-aa31-41d4-bd40-9318885f6921" style="border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" alt="EasyView Dark Theme Mobile" />
+</div>
+<br>
+
+The web visits hundreds of millions of minds every day. Yet, it strictly follows a rigid **"one size fits all"** framework. Even a neurotypical mind experiences clutter and fatigue across heavy websites. For those with neurodivergent conditions, this chaotic landscape—filled with flashing animations, tiny fonts, and overwhelming jargon—becomes completely inaccessible.
+
+**EasyView bridges this gap.** We empower anyone to customize and mutate *any* website directly with single clicks or natural language prompts. Remake your own version of the web, completely bypassing how developers designed it—without breaking the functionality.
 
 ---
 
-## 🚀 Key Features
-
-### 🧠 **Reading Support**
-*   **Dyslexia-Friendly Fonts:** Instant injection of OpenDyslexic and other high-readability typefaces.
-*   **Bionic Reading:** Guided fixation points that lead your eyes through sentences effortlessly.
-*   **Smart Spacing:** Dynamically adjust line-height and word-spacing to prevent "text-blurring."
-
-### 🤖 **AI Understanding (Powered by Amazon Nova)**
-*   **Jargon Decoder:** Real-time translation of complex legal, financial, and medical terms.
-*   **One-Click Simplification:** Transform dense paragraphs into 6th-grade level summaries.
-*   **Contextual Tooltips:** Hover over complex words for instant, simple explanations.
-
-### 🛡️ **Sensory Control**
-*   **Sensory Shield:** Instantly freeze distracting animations, transitions, and auto-playing videos.
-*   **Focus Mode:** Strip away sidebars and headers to leave only the content that matters.
-
-### 🎨 **Visual Customization**
-*   **Color Overlays:** Reduce visual stress with tinted overlays (Sepia, Cool Blue, Soft Green).
-*   **High Contrast:** One-tap accessibility themes for low-vision support.
-
-### 📄 **Content Freedom**
-*   **Universal Reader:** An isolated, distraction-free environment for deep reading.
-*   **Multi-Format Export:** Save transformed content to **EPUB, DOCX, or HTML** for offline study.
-
----
-
-## 📸 Experience EasyView
-
+## 🔥 **The internet is broken. We're just fixing it.**
 
 <div align="center">
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/user-attachments/assets/5682892e-8f08-437f-8871-f66852fd1328" width=auto alt="image 1" />
-    </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/af6ae60a-8c20-4d70-bd03-c4d46d76ecf5" width=auto alt="image 2" />
-    </td>
-  </tr>
-</table>
-   <br>
-   <img width="1812" height="894" alt="less" src="https://github.com/user-attachments/assets/dc06d826-5cf1-48ef-a806-643a897f2ff8" />
+  <img width="1176" height="388" alt="Screen Recording" src="https://github.com/user-attachments/assets/e6655440-2ac2-421a-9aea-843c68db512c" />
 </div>
 
+### ✨ **Core Evolution Features**
 
+*   **⚡ EasyView Morph Engine:** Describe what you want in natural language prompts and *boom*—the webpage adapts perfectly to what you described. Create your own personalized version of any web application instantly without breaking core logic.
+*   **🖊️ Sticky Notes & Web Highlighter:** Annotate directly on the web and highlight critical paths to retain context seamlessly.
+*   **🧠 Jargon Decoder & Tooltips:** 
+    *   **Define**: Select any word to instantly view definitions from world-renowned dictionaries.
+    *   **Decoder**: Magically simplify complex medical, financial, or technical jargon directly on the webpage via intuitive tooltips.
+    *   **Simplify**: Instantly translate heavy paragraphs into simple, plain-English sentences and replace them directly on the screen.
+    *   **Bookmark**: Save difficult terms globally to your offline vocabulary deck with one click.
+*   **🛡️ Focus & Privacy Shield:**
+    *   **Content Blurring**: Instantly blur WhatsApp messages, sensitive emails, IDs, and passwords across all websites to protect privacy during screen sharing.
+    *   **Cursor Flashlight**: A highly customizable spotlight (circle or beam) that attaches to your cursor, dimming the surrounding page to keep your focus relentlessly fixed on the content you’re pointing at.
+*   **⚙️ Sensory Shield:** Premium sensory controls that halt all visual distractions, autoplaying media, and flashing content instantly (Features 3 premium and 1 normal mode).
+*   **📖 Dyslexia Reading Mode:** Unleash bionic reading, customized neurodivergent fonts, and tailored letter/word spacing for flawless readability.
+*   **🔊 Text to Speech:** Transforms any webpage into an audiobook, reading it out loud flawlessly.
+*   **📚 Vocabulary Notebook:** A dedicated hub to import and export bulk vocabulary decks for your offline study flow.
+*   **📝 Offline Converter:** Open and read DOCX/PDF files offline with all of EasyView's privacy and visual customizations applied locally.
+*   **🎨 Advanced Visuals Tab:** Total control over fonts, sizes, and stroke depths specifically crafted for visually impaired accessibility.
 
+<br>
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/abb169c8-1e6e-416b-9155-3fcda3a2dd1f" style="max-width: 100%; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.4);" alt="Dyslexia Reading Mode" />
+</div>
+<br>
 
-
----
-
-## ⚙️ How It Works
-
-EasyView lives in your browser and acts as an intelligent filter between you and the raw code of the web.
-
-```mermaid
-graph LR
-    A[Raw Webpage] --> B{EasyView Engine}
-    B --> C[AI Decoder]
-    B --> D[Sensory Shield]
-    B --> E[Visual Styler]
-    E --> F[Clean, Readable Output]
-```
-
-1.  **Detect:** EasyView analyzes the DOM structure as the page loads.
-2.  **Filter:** Distractions are neutralized, and AI identifies "high-friction" content.
-3.  **Transform:** Personalized visual and linguistic changes are applied in real-time.
-
----
-
-## 💎 Advanced Support (Premium)
-*"Accessibility is not one-size-fits-all."*
-
-Upgrade to **EasyView Premium** for the most advanced cognitive tools:
-*   **ADHD Specialized Fonts:** Research-backed typefaces for maximum focus.
-*   **Unlimited AI Decoding:** No quotas on Jargon decoding or text simplification.
-*   **Advanced Sensory Modes:** Deep-level neutralization of modern web motion.
-
----
-
-## 🛠️ Tech Stack
-
-*   **Frontend:** JavaScript, React, Tailwind CSS
-*   **Core:** Chrome Extension APIs (Manifest V3)
-*   **Intelligence:** AWS Bedrock / Amazon Nova AI
-*   **Backend:** Supabase (Auth, DB, Payments)
+> [!TIP]
+> ⭐ **Bring Your Own API Key (BYOK):** If your monthly AI limit exceeds, simply plug in your own Gemini/OpenRouter API key in settings and use features indefinitely, Privacy First!
+> 
+> ⭐ **Free Foundations:** All core features intended solely for basic neurodivergent accessibility are permanently free.
+> 
+> ⭐ **Innovator+ Hall of Fame:** Suggest unmapped features or bugs via our [Contact Page](https://easyview.in/contact). Impactful suggestions are recognized in our Hall of Fame and rewarded with 15 days of Premium + shareable digital certificates.
 
 ---
 
-## ❤️ Why This Matters
-Technology should not exclude people based on how their brain works. Every time a student with dyslexia can't read their assignment, or an elderly user gets confused by a bank's terms of service, we have failed.
+## 💎 The Luxury of Choice (Business Model)
 
-**EasyView is our commitment to a web where everyone is invited.**
+We fundamentally believe top-tier cognitive tools should be accessible. The EasyView Premium Model bypasses heavy subscriptions to provide ultimate flexibility, including credit-based Pay-As-You-Go models.
 
----
+**Premium Passes:**
+- **24-Hour Pass**: ₹15 / $0.99
+- **1 Month**: ₹99 / $1.99
+- **6 Months**: ₹299 / $7.99
+- **12 Months**: ₹499 / $11.99
 
-## 🗺️ Roadmap
-- [ ] **Hyper-Personalization:** AI that learns your specific reading speed and adjusts spacing.
-- [ ] **Mobile Companion:** Bring cognitive clarity to iOS and Android.
-- [ ] **Voice Navigation:** Control the web using simple, natural language.
-- [ ] **Collaborative Dictionary:** Community-sourced definitions for niche jargon.
+*Explore all tier options on our [Official Pricing Page](https://easyview.in/pricing).*
 
----
+> **Why should Premium only be something you buy for yourself? 👀**
+> You can now **Gift Premium or Day Passes** to friends, colleagues, student groups, or family through redeemable luxury codes and links!
 
-## 👥 The Team
-Built with passion by **Team ThinkTech**.
-
----
-
-## 🏁 Try EasyView Now
-Ready to experience a clearer web?
-
-[**Install from Chrome Web Store**](https://chromewebstore.google.com/detail/easyview/fkmaolnondclckcdeeanjophpnhndgkk) | [**Watch the Demo**](https://easyview.vercel.app) | [**Read the Docs**](https://easyview.vercel.app/documentation)
-
-<br/>
+<br />
 
 <div align="center">
-  <b>Made with ❤️ for neurodivergent accessibility.</b>
+
+https://github.com/user-attachments/assets/1dc45b4e-3393-4c00-85e1-e849f7352c0b
+
+</div>
+
+<br />
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/thinkapoorv/EasyView/main/icons/icon128.png" alt="EasyView" width="50" />
+  <br>
+  <i>Designing a web that fits every mind.</i>
+
+  [![Experience EasyView](https://img.shields.io/badge/Experience_EasyView-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://easyview.in/)
+
+  <a href="https://easyview.in/privacy_policy">Privacy Policy</a> &nbsp;✦&nbsp; <a href="https://easyview.in/contact">Contact Team</a> &nbsp;✦&nbsp; <a href="https://easyview.in/pricing">Pricing</a>
+
+  <sup>&copy; EasyView. Built with neurodivergent empathy.</sup>
 </div>

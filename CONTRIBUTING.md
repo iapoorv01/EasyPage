@@ -1,108 +1,70 @@
-# Contributing to EasyView
+<div align="center">
+  <img src="https://raw.githubusercontent.com/thinkapoorv/EasyView/main/icons/icon128.png" alt="EasyView Logo" width="120" style="border-radius: 20px; box-shadow: 0 0 40px rgba(0, 120, 255, 0.4);" />
 
-First off, thank you for considering contributing to EasyView! It's people like you that make EasyView such a great tool for improving web accessibility.
+  # ✦ **Contributing to EasyView** ✦
+  **The first zero-shot, LLM-powered UI mutation engine for the modern web.**
 
-## Code of Conduct
+  [![Version: 1.1.1.4](https://img.shields.io/badge/Version-1.1.1.4-000000?style=for-the-badge&logo=vercel)](#)
+  [![State: Community Innovators](https://img.shields.io/badge/State-Community_Innovators-0055FF?style=for-the-badge)](#)
 
-This project and everyone participating in it is governed by a code of respect and inclusivity. By participating, you are expected to uphold this code.
+  ### *Built by us. Shaped by you.*
+  > **EasyView thrives on community collaboration. We celebrate the thinkers, visionaries, and advocates who help us make the web accessible for everyone.**
+</div>
 
-## How Can I Contribute?
+---
 
-### Reporting Bugs
+<br>
 
-Before creating bug reports, please check existing issues as you might find that you don't need to create one. When you are creating a bug report, please include as many details as possible:
+> [!IMPORTANT]
+> **Direct Code Contributions are Closed**
+> To protect the proprietary mechanics and the security of our core engines, we currently **do not accept direct code contributions (Pull Requests)**. However, our **Open Source Innovator+** program offers incredibly rewarding pathways to shape the future of EasyView.
 
-* **Use a clear and descriptive title**
-* **Describe the exact steps to reproduce the problem**
-* **Provide specific examples** (URLs, browser version, screenshots)
-* **Describe the behavior you observed and what you expected**
-* **Include details about your configuration** (browser version, OS, API provider)
+## 💎 The Open Source Innovator+ Program
 
-### Suggesting Enhancements
+We believe the most profound features come from our community's vision. When you contribute, you aren't just helping an extension—you are joining an elite task force. 
 
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, please include:
+**Selected contributors** will receive official certification and will be immortalized as **Open Source Innovators+** on our exclusive platforms:
+- 🌟 [EasyView Team Hub](https://easyview.in/team)
+- 🌐 [EasyView Community Showcase](https://easyview.in/community)
 
-* **Use a clear and descriptive title**
-* **Provide a step-by-step description of the suggested enhancement**
-* **Provide specific examples to demonstrate the steps**
-* **Describe the current behavior and the expected behavior**
-* **Explain why this enhancement would be useful**
+> [!CAUTION]
+> **Mandatory Requirement**: When submitting any contribution via GitHub or our portals, you **MUST** provide the exact email address registered to your EasyView account. This ensures we can officially grant your verified certificate, allocate premium benefits, and set up your public profile.
 
-### Pull Requests
+---
 
-1. Fork the repo and create your branch from `main`
-2. If you've added code that should be tested, add tests
-3. Ensure your code follows the existing style
-4. Make sure your code lints
-5. Issue that pull request!
+## 🚀 Impact Pathways (How to Contribute)
 
-## Development Setup
+Leave your mark on EasyView through any of these three premium channels:
 
-1. Fork and clone the repository
-2. Load the extension in Chrome:
-   - Navigate to `chrome://extensions/`
-   - Enable "Developer mode"
-   - Click "Load unpacked"
-   - Select the project directory
-3. Make your changes
-4. Test thoroughly on various websites
-5. Submit a pull request
+### 1. Shape the Horizon (Features)
+Have a vision for a feature that doesn't exist yet? Notice an edge-case we missed? 
+We rely on you to suggest profound functionalities that we haven't mapped out. 
+- **Via GitHub**: Open a detail-rich Issue outlining the feature.
+- **Via Portal**: Reach out directly at [EasyView Contact](https://easyview.in/contact).
 
-## Coding Guidelines
+### 2. Hunt the Unknown (Bugs)
+Our Morph Engine is vast, and the web is infinitely complex. Help us identify elusive bugs or UI clashes that our automated systems missed.
+- Report detailed reproduction steps via GitHub Issues or [EasyView Contact](https://easyview.in/contact).
 
-### JavaScript Style
-- Use ES6+ features where appropriate
-- Use meaningful variable and function names
-- Add comments for complex logic
-- Keep functions small and focused
-- Handle errors gracefully
+### 3. Community Evangelism (Growth)
+Are you a leader? You can contribute significantly by promoting EasyView across your networks and bringing real, authentic users to our ecosystem.
+- Host discussions about EasyView on social platforms, accessibility forums, or campuses.
+- Create content demonstrating our Sensory Shields or Jargon Decoders or any other features.
+- *Share your impact links and metrics with us via the [EasyView Community](https://easyview.in/community) portal to claim your Innovator+ status!*
 
-### Commit Messages
-- Use present tense ("Add feature" not "Added feature")
-- Use imperative mood ("Move cursor to..." not "Moves cursor to...")
-- Limit first line to 72 characters
-- Reference issues and pull requests liberally
+---
 
-### Documentation
-- Update README.md if you change functionality
-- Comment complex code blocks
-- Update the manifest.json version if needed
+## 🏆 The Innovator Rewards
 
-## Areas for Contribution
+To recognize your dedication to accessibility, certified contributors receive:
+1. **The Official 'Open Source Innovator+' Certificate** – Issued digitally, verified, and ready for your professional portfolio.
+2. **Permanent Showcase** – Your name and profile dynamically featured on our [Team](https://easyview.in/team) and [Community](https://easyview.in/community) endpoints.
+3. **Ecosystem Influence** – Direct lines to our core engineering team to voice your feedback on upcoming betas and EasyView premium.
 
-- **Backend / Supabase**: Assist with Edge Functions, RLS policies, and API optimizations
-- **Features**: New accessibility features or enhancements
-- **Bug Fixes**: Identify and fix bugs
-- **Documentation**: Improve or add documentation
-- **Testing**: Add test coverage
-- **Performance**: Optimize code for better performance
-- **UI/UX**: Improve the user interface and experience
-- **Accessibility**: Make the extension itself more accessible
+---
 
-## Priority Areas
-
-- Additional language support
-- Firefox and Edge compatibility
-- Enhanced dyslexia reading features
-- Performance optimizations
-- Screen reader integration
-- Mobile browser support
-
-## Testing Checklist
-
-Before submitting a pull request, please test:
-
-- [ ] Extension loads without errors
-- [ ] All four modes work correctly
-- [ ] Settings persist across browser sessions
-- [ ] Works on various websites (government, educational, news)
-- [ ] No console errors
-- [ ] API keys are stored securely
-- [ ] UI is responsive and accessible
-- [ ] Dark/light themes work properly
-
-## Questions?
-
-Feel free to open an issue with your question or reach out to the maintainers.
-
-Thank you for contributing to making the web more accessible! 🎉
+<div align="center">
+  <em>“Building a more accessible web, together—beyond the code.”</em>
+  <br><br>
+  <a href="https://easyview.in/community">Join the Elite Community</a> • <a href="https://easyview.in/contact">Contact Us</a>
+</div>

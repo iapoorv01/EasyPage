@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "EasyView — Clarity for Every Brain",
   "short_name": "EasyView",
-  "version": "1.1.1.4",
+  "version": "1.1.1.5",
   "description": "Transform any website instantly with AI prompts or single clicks. See the web your way.",
   "offline_enabled": true,
   "permissions": [
@@ -11,9 +11,7 @@
     "scripting",
     "alarms",
     "notifications",
-    "fontSettings",
-    "declarativeNetRequest",
-    "downloads"
+    "fontSettings"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -38,11 +36,13 @@
         "js/features/text-to-speech.js",
         "js/features/content-privacy-shield.js",
         "js/features/morph-engine.js",
+        "js/features/sticky-notes.js",
         "inject/index.js",
         "inject/payment-bridge.js"
       ],
       "css": [
-        "content.css"
+        "content.css",
+        "js/features/sticky-notes.css"
       ],
       "run_at": "document_idle"
     }
@@ -53,6 +53,15 @@
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "toggle-sticky": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Pin Sticky Note"
     }
   },
   "icons": {

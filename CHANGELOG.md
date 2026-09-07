@@ -4,9 +4,35 @@ All notable changes to EasyView will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## [1.1.1.5] - 2026-09-06
+
+### Features
+* **Tour Enhancements**: Added the new Sticky Notes feature directly into the interactive onboarding tour.
+* Deployed **DOM-Anchored Spatial Sticky Notes** mapping mathematically to element boundaries (`v1.1.1.5`) with `Alt+S` keyboard shortcut .
+* Integrated asynchronous Global `chrome.storage.local` aggregators to natively enforce a 15-Note Free Tier limit tied seamlessly to a premium checkout pathway.
+* Replaced native browser storage alerts with bespoke glassmorphic UI limit modals synced natively to EasyView's dark mode states.
+* Implemented cross-framework SPA Hydration polling (handling harsh dynamic nodes on Next.js/React clusters like WhatsApp Web locally via exponentially-backed rendering attempts).
+
+### Refactoring & UI UX
+* Strip-mined standard CSS `backdrop-filter` rules off sticky notes to integrate 100% opaque, ultra-luxury metallic rendering variations (`Onyx`, `Pearl`, `Sapphire`, `Amethyst`).
+* Expanded element constraints to grant users native dimensional dragging via standard CSS elasticity rules.
+* Restructured color capabilities to offer an infinite Hex `<input>` mapper seamlessly tied to an internal `YIQ Luminance Algorithm` providing structurally flawless black/white contrast overlays over any picked hexadecimal combination.
+* Hardened keyboard shortcut IPC configurations bypassing `DOM` keystroke polling in exclusive favor of V3 Chrome Web Store compliant architectures (`chrome.commands`).
+
+### Added
+- **Global System Notification Engine**: Engineered an intelligent, non-intrusive broadcast architecture natively inside the extension popup. It seamlessly fetches targeted operational payloads (e.g., scheduled maintenance, hotfixes) dynamically mapped to your specific extension version.
+- **Smart Notification Queuing**: The architecture automatically detects overlapping system alerts. Instead of spamming multiple popups, it gracefully stacks them and transforms the dismiss button into a glowing "Next" iteration cue, ensuring you only see one clean message at a time.
+- **Autonomous JWT Refresh Engine**: Implemented a secure background token regeneration architecture. The web dashboard now securely broadcasts the Supabase `refresh_token` to the extension, enabling `background.js` to natively detect `401 Unauthorized` responses and instantly fetch a fresh session from the backend without interrupting user workflows.
+
+### Fixed
+- **Export Loader Stability**: Resolved a UI issue where the Morph Export loader animation was visually frozen. Additionally, added a robust timeout safeguard to ensure the compiling operation gracefully exits and notifies you if the connection drops, rather than freezing indefinitely.
+- **Morph Engine Visual Stability**: Fixed a bug where pages morphed by AI would sometimes break website fonts or backgrounds due to incomplete responses. The system now safely catches and ignores these incomplete updates, keeping your pages looking beautiful.
+- **Silent Session Timeouts**: Fixed an issue where the extension would unexpectedly display a "Session Expired" notification after 7 days, forcing users to manually open the web dashboard to log back in. The extension now seamlessly and securely auto-refreshes your session in the background without interrupting your reading workflow.
+- **Phantom Login Sessions**: Resolved a bug where manually clicking the red "Logout" button inside the extension's popup UI cleared the visible screen but failed to fully log the user out in the background process. Clicking logout now rigorously purges all active session tokens immediately.
+- **Notebook Export Authorization Error**: Fixed a critical bug where exporting CSVs from the Notebook threw a 401 Unauthorized error due to a missing Authorization header in the codebase.
+- **Optimized Permissions**: Replaced `chrome.downloads` with native HTML5 anchor streaming in the popup and purged the ghost `declarativeNetRequest` permission, completely removing both heavy permission warnings upon installation and improving Web Store compliance.
 
 ## [1.1.1.4] - 2026-09-01
-
 ### Added
 - **Global Vocabulary Network**: Developed an intelligent background propagation engine that seamlessly scans the active tab whenever a user translates jargon via the tooltip, silently auto-highlighting all identical vocabulary instances across the entire document in real-time.
 - **Dynamic Notification Stacking**: Rebuilt the core notification engine (`showNotification`) with a flexible CSS Flexbox stack, allowing simultaneous overlapping events (such as text simplification and jargon decodes arriving concurrently) to queue beautifully along the Y-axis without visual occlusion or premature termination.
